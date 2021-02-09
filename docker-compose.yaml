@@ -1,0 +1,12 @@
+version: '3'
+services:
+  jamovi:
+    container_name: jamovi_auth
+    build: .
+    image: jamovi/jamovi_auth
+    ports:
+      - '41337:8080'
+      - '41338:8081'
+      - '41339:8082'
+    command: ["service apache2 start && /usr/bin/python3 -m jamovi.server 41337 --if=*"]
+    stdin_open: true
