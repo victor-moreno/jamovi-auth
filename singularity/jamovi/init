@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# port="1337" # default 
+
+service apache2 start 
+/usr/bin/python3 -m jamovi.server $port
